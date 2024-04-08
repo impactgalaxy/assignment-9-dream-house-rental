@@ -10,7 +10,12 @@ export default {
       'poppins': ['"Poppins", sans-serif'],
       'roboto': ['"Roboto", sans-serif'],
     },
-    extend: {},
+
+    extend: {
+      backgroundImage: {
+        'banner': "url('https://i.ibb.co/ZW9n29d/harper-van-mourik-0yf-WDw-HOB0g-unsplash.jpg')",
+      }
+    },
   },
   plugins: [require("daisyui")],
 }

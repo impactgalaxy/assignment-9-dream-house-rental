@@ -11,7 +11,7 @@ export default function Navbar() {
         </>
     )
     return (
-        <div className="navbar flex items-center justify-between bg-base-100 font-poppins font-bold border fixed top-0 z-10">
+        <div className="navbar bg-base-100 font-poppins font-bold flex items-center justify-between">
             <div>
                 <div className="dropdown">
                     <div tabIndex={0} role="button" className="btn btn-ghost lg:hidden">
@@ -21,7 +21,7 @@ export default function Navbar() {
                         {navLinks}
                     </ul>
                 </div>
-                <Link to="/" className="btn btn-ghost text-xl">Dream House Rent</Link>
+                <Link to="/" className="btn btn-ghost text-xl font-black">Dream House Rent</Link>
             </div>
             <div className="hidden lg:flex">
                 <ul className="menu menu-horizontal px-1">
@@ -30,7 +30,12 @@ export default function Navbar() {
                 </ul>
             </div>
             <div>
-                <a className="btn">Button</a>
+                <div tabIndex={0} role="button" className="btn btn-ghost btn-circle avatar">
+                    <div className="w-10 rounded-full">
+                        <img alt="Tailwind CSS Navbar component" src="https://daisyui.com/images/stock/photo-1534528741775-53994a69daeb.jpg" />
+                    </div>
+                </div>
+                <Link to="/user/login" className="btn">Log in</Link>
             </div>
         </div>
     )

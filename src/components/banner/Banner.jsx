@@ -1,7 +1,8 @@
 
 export default function Banner() {
     return (
-        <div className="lg:h-[500px] border">
+        <div className="h-[500px] bg-banner bg-no-repeat bg-center bg-cover">
+
 
 
         </div>
