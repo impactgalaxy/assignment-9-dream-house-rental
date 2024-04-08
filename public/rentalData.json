@@ -1,0 +1,236 @@
+[
+    {
+        "id": 1,
+        "estate_title": "Beautiful Beachfront Villa",
+        "location": "Miami Beach, Florida",
+        "area_sqft": 3000,
+        "facilities": [
+            "Swimming Pool",
+            "Garden",
+            "Ocean View",
+            "Private Parking"
+        ],
+        "owner": "John Doe",
+        "price": 5000,
+        "house_img": "https://i.ibb.co/HCnDcBr/chelaxy-designs-4i-BUke-R2-UJs-unsplash.jpg",
+        "status": "rent",
+        "segment_name": "Luxury",
+        "house_description": "This stunning beachfront villa offers breathtaking views of the ocean. With a spacious interior and luxurious amenities, it's the perfect getaway for a relaxing vacation."
+    },
+    {
+        "id": 2,
+        "estate_title": "Cozy Urban Apartment",
+        "location": "Downtown Manhattan, New York",
+        "area_sqft": 1000,
+        "facilities": [
+            "Gym",
+            "Concierge Service",
+            "Balcony",
+            "City View"
+        ],
+        "owner": "Jane Smith",
+        "price": 3000,
+        "house_img": "https://i.ibb.co/wyRJ0bR/roman-marchenko-WUf-Dkcj-YMw-I-unsplash.jpg",
+        "status": "rent",
+        "segment_name": "Urban",
+        "house_description": "This modern urban apartment is located in the heart of downtown Manhattan. Enjoy city living with convenient access to restaurants, shops, and entertainment."
+    },
+    {
+        "id": 3,
+        "estate_title": "Spacious Family Home",
+        "location": "Suburban Chicago, Illinois",
+        "area_sqft": 2500,
+        "facilities": [
+            "Backyard",
+            "Home Theater",
+            "Garage",
+            "Playroom"
+        ],
+        "owner": "Michael Johnson",
+        "price": 4000,
+        "house_img": "https://i.ibb.co/wyRJ0bR/roman-marchenko-WUf-Dkcj-YMw-I-unsplash.jpghttps://i.ibb.co/WWHwJGb/alpha-platforms-aerial-lifts-vm-Ijzd-HL-Mo-unsplash.jpg",
+        "status": "sale",
+        "segment_name": "Family",
+        "house_description": "This spacious family home is perfect for entertaining with its large backyard and home theater. Located in a quiet suburban neighborhood, it's ideal for families looking for a peaceful retreat."
+    },
+    {
+        "id": 4,
+        "estate_title": "Luxury Beachfront Villa",
+        "location": "Malibu, California",
+        "area_sqft": 5000,
+        "facilities": [
+            "Infinity Pool",
+            "Private Beach Access",
+            "Ocean View",
+            "Home Theater"
+        ],
+        "owner": "Michael Johnson",
+        "price": 10000000,
+        "house_img": "https://i.ibb.co/N3PKM1b/sam-e-y-Ew-C3w6bi-TA-unsplash.jpg",
+        "status": "sale",
+        "segment_name": "Luxury",
+        "house_description": "Live in ultimate luxury with this stunning beachfront villa in Malibu. With its own infinity pool and private beach access, it's the epitome of coastal living."
+    },
+    {
+        "id": 5,
+        "estate_title": "Cozy Mountain Cabin",
+        "location": "Lake Tahoe, Nevada",
+        "area_sqft": 1500,
+        "facilities": [
+            "Wood-burning Fireplace",
+            "Hot Tub",
+            "Deck with Lake View",
+            "Ski Storage"
+        ],
+        "owner": "Emily Davis",
+        "price": 750000,
+        "house_img": "https://i.ibb.co/98PRmtC/jakub-zerdzicki-La-Ue5i-Mc-HRo-unsplash.jpg",
+        "status": "sale",
+        "segment_name": "Adventure",
+        "house_description": "Escape to the mountains with this charming cabin in Lake Tahoe. Perfect for outdoor enthusiasts, it offers easy access to skiing, hiking, and boating."
+    },
+    {
+        "id": 6,
+        "estate_title": "Modern Urban Condo",
+        "location": "Downtown Toronto, Canada",
+        "area_sqft": 1200,
+        "facilities": [
+            "Concierge Service",
+            "Gym",
+            "Balcony",
+            "City View"
+        ],
+        "owner": "Sophia Lee",
+        "price": 600000,
+        "house_img": "https://i.ibb.co/kMnQCmF/yansi-keim-4-U19-TDp1bw-unsplash.jpg",
+        "status": "sale",
+        "segment_name": "Urban",
+        "house_description": "Experience city living at its finest with this modern condo in downtown Toronto. With its central location and luxurious amenities, it's the perfect urban retreat."
+    },
+    {
+        "id": 7,
+        "estate_title": "Family-Friendly Suburban Home",
+        "location": "Los Angeles, California",
+        "area_sqft": 2500,
+        "facilities": [
+            "Backyard",
+            "Playroom",
+            "Garage",
+            "Community Pool"
+        ],
+        "owner": "Daniel Johnson",
+        "price": 850000,
+        "house_img": "https://i.ibb.co/ZW9n29d/harper-van-mourik-0yf-WDw-HOB0g-unsplash.jpg",
+        "status": "sale",
+        "segment_name": "Family",
+        "house_description": "Settle down in this spacious suburban home in Los Angeles. With plenty of room for the whole family and access to community amenities, it's the perfect place to call home."
+    },
+    {
+        "id": 8,
+        "estate_title": "Rustic Countryside Farmhouse",
+        "location": "Provence, France",
+        "area_sqft": 3000,
+        "facilities": [
+            "Vineyard",
+            "Garden",
+            "Pool",
+            "Outdoor Dining Area"
+        ],
+        "owner": "Lucas Martin",
+        "price": 1200000,
+        "house_img": "https://i.ibb.co/sqYwxV2/daria-nepriakhina-MUR3s5-Fez-Jc-unsplash.jpg",
+        "status": "sale",
+        "segment_name": "Rural",
+        "house_description": "Escape to the French countryside with this charming farmhouse in Provence. Surrounded by vineyards and olive groves, it offers a peaceful retreat away from the hustle and bustle of city life."
+    },
+    {
+        "id": 9,
+        "estate_title": "Charming Countryside Cottage",
+        "location": "Cotswolds, England",
+        "area_sqft": 1500,
+        "facilities": [
+            "Fireplace",
+            "Garden",
+            "Parking",
+            "Wi-Fi"
+        ],
+        "owner": "Emily Johnson",
+        "price": 2000,
+        "house_img": "https://i.ibb.co/T1Tqdf3/r-architecture-Jv-Q0-Q5-Ike-MM-unsplash.jpg",
+        "status": "rent",
+        "segment_name": "Rural",
+        "house_description": "Escape to the idyllic countryside with this charming cottage. Surrounded by lush greenery and rolling hills, it offers a cozy retreat with modern amenities."
+    },
+    {
+        "id": 10,
+        "estate_title": "Modern City Loft",
+        "location": "Downtown Los Angeles, California",
+        "area_sqft": 1200,
+        "facilities": [
+            "Rooftop Pool",
+            "Fitness Center",
+            "Balcony",
+            "City View"
+        ],
+        "owner": "Adam Smith",
+        "price": 3500,
+        "house_img": "https://i.ibb.co/R7V6QsP/flo-pappert-ksp-Rwq-Fx-Oms-unsplash.jpg",
+        "status": "rent",
+        "segment_name": "Urban",
+        "house_description": "Live in style in this sleek and modern city loft. Enjoy panoramic views of the Los Angeles skyline from your private balcony and take advantage of the building's luxurious amenities."
+    },
+    {
+        "id": 11,
+        "estate_title": "Seaside Bungalow",
+        "location": "Maui, Hawaii",
+        "area_sqft": 2000,
+        "facilities": [
+            "Beach Access",
+            "Private Deck",
+            "Outdoor Shower",
+            "BBQ Grill"
+        ],
+        "owner": "Sarah Brown",
+        "price": 6000,
+        "house_img": "https://i.ibb.co/KFnFjxH/gus-ruballo-h5-QNcl-JUi-A8-unsplash.jpg",
+        "status": "rent",
+        "segment_name": "Luxury",
+        "house_description": "Experience paradise in this stunning seaside bungalow. Located on the shores of Maui, it offers the ultimate luxury getaway with direct beach access and breathtaking ocean views."
+    },
+    {
+        "id": 12,
+        "estate_title": "Mountain Retreat",
+        "location": "Aspen, Colorado",
+        "area_sqft": 1800,
+        "facilities": [
+            "Hot Tub",
+            "Fire Pit",
+            "Ski-in/Ski-out Access",
+            "Game Room"
+        ],
+        "owner": "David Wilson",
+        "price": 4500,
+        "house_img": "https://i.ibb.co/HB9LfnL/steven-ungermann-OSj-YZhgw67-M-unsplash.jpg",
+        "status": "rent",
+        "segment_name": "Adventure",
+        "house_description": "Escape to the mountains with this cozy retreat in Aspen. With ski-in/ski-out access and luxurious amenities, it's the perfect base for outdoor adventures all year round."
+    },
+    {
+        "id": 13,
+        "estate_title": "Historic Townhouse",
+        "location": "Savannah, Georgia",
+        "area_sqft": 2200,
+        "facilities": [
+            "Historic Charm",
+            "Private Courtyard",
+            "Antique Furnishings",
+            "Gourmet Kitchen"
+        ],
+        "owner": "Olivia Williams",
+        "price": 4000,
+        "house_img": "https://i.ibb.co/sqYwxV2/daria-nepriakhina-MUR3s5-Fez-Jc-unsplash.jpg",
+        "status": "rent",
+        "segment_name": "Heritage",
+        "house_description": "Step back in time with this beautifully restored historic townhouse in Savannah. Located in the heart of the historic district, it offers a unique blend of old-world charm and modern comfort."
+    }
+]

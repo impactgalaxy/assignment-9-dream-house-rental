@@ -6,7 +6,9 @@ export default {
   ],
   theme: {
     fontFamily: {
-      'body': ['"Nunito", sans-serif']
+      'nunito': ['"Nunito", sans-serif'],
+      'poppins': ['"Poppins", sans-serif'],
+      'roboto': ['"Roboto", sans-serif'],
     },
     extend: {},
   },
