@@ -9,24 +9,31 @@ export const AuthContext = createContext(null);
 
 
 export default function ContextProvider({ children }) {
+    const [loading, setLoading] = useState(true);
     const [user, setUser] = useState(null);
     const createUser = (email, password) => {
+        setLoading(true);
         return createUserWithEmailAndPassword(auth, email, password);
     }
 
     const signInUser = (email, password) => {
+        setLoading(true);
         return signInWithEmailAndPassword(auth, email, password);
     }
     const loginWithGoogle = () => {
+        setLoading(true);
         return signInWithPopup(auth, googleProvider);
     }
     const loginWithGithub = () => {
+        setLoading(true);
         return signInWithPopup(auth, githubProvider);
     }
     const userLogout = () => {
+        setLoading(true);
         return signOut(auth);
     }
     const userProfileUpdate = (name, photo) => {
+        setLoading(true);
         return updateProfile(auth.currentUser, {
             displayName: name,
             photoURL: photo,
@@ -41,10 +48,12 @@ export default function ContextProvider({ children }) {
         userLogout,
         userProfileUpdate,
         user,
+        loading
     }
     useEffect(() => {
         const userCondition = onAuthStateChanged(auth, (currentUser) => {
             setUser(currentUser);
+            setLoading(false);
         });
         return () => {
             userCondition();

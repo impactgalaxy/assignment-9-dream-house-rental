@@ -14,7 +14,7 @@ export default function Banner() {
             </div>
 
             <Swiper
-                slidesPerView={3}
+                slidesPerView={1}
                 spaceBetween={30}
                 freeMode={true}
                 navigation={true}

@@ -14,6 +14,7 @@ export default {
     extend: {
       backgroundImage: {
         'banner': "url('/banner.svg')",
+        'segmentBg': "url('/segment.svg')"
       }
     },
   },
