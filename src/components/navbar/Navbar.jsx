@@ -1,17 +1,36 @@
+import { useContext, useState } from "react"
 import { Link, NavLink } from "react-router-dom"
+import { AuthContext } from "../../contextProvider/ContextProvider";
+import defaultUser from "../../assets/user.png"
 
 export default function Navbar() {
+    const [profile, setProfile] = useState(false);
+    const { user, userLogout } = useContext(AuthContext);
+    const handleLogout = () => {
+        userLogout()
+            .then(() => {
+                console.log("logout successfully");
+            })
+            .catch(error => {
+                console.log(error);
+            })
+    }
+    console.log(profile);
+
     const navLinks = (
         <>
             <li><NavLink to="/" className={({ isActive }) => isActive ? "text-green-700 border-b" : ""}>Home</NavLink></li>
             <li><NavLink to="/house-for-rent" className={({ isActive }) => isActive ? "text-green-700 border-b" : ""}>House for Rent</NavLink></li>
             <li><NavLink to="/house-for-sell" className={({ isActive }) => isActive ? "text-green-700 border-b" : ""}>House for Sell</NavLink></li>
-            <li><NavLink to="/about" className={({ isActive }) => isActive ? "text-green-700 border-b" : ""}>About</NavLink></li>
-            <li><NavLink to="/contact" className={({ isActive }) => isActive ? "text-green-700 border-b" : ""}>Contact</NavLink></li>
+            <li><NavLink to="/update-profile" className={({ isActive }) => isActive ? "text-green-700 border-b" : ""}>Update Profile</NavLink></li>
+
+            {
+                user && <li><NavLink to="/user-profile" className={({ isActive }) => isActive ? "text-green-700 border-b" : ""}>User Profile</NavLink></li>
+            }
         </>
     )
     return (
-        <div className="navbar bg-base-100 font-poppins font-bold flex items-center justify-between">
+        <div className="navbar bg-base-100 font-poppins font-bold flex items-center justify-between z-10 border">
             <div>
                 <div className="dropdown">
                     <div tabIndex={0} role="button" className="btn btn-ghost lg:hidden">
@@ -30,13 +49,32 @@ export default function Navbar() {
                 </ul>
             </div>
             <div>
-                <div tabIndex={0} role="button" className="btn btn-ghost btn-circle avatar">
-                    <div className="w-10 rounded-full">
-                        <img alt="Tailwind CSS Navbar component" src="https://daisyui.com/images/stock/photo-1534528741775-53994a69daeb.jpg" />
+                {
+                    user && <div onClick={() => setProfile(!profile)} className="btn btn-ghost btn-circle avatar relative" title={`${user ? user?.displayName : ""}`}>
+
+                        <div className={`w-10 rounded-full`}>
+                            {
+                                user?.photoURL ? <img alt="Tailwind CSS Navbar component" src={user.photoURL} /> : <img alt="Tailwind CSS Navbar component" src={defaultUser} />
+                            }
+
+                        </div>
                     </div>
-                </div>
-                <Link to="/user/login" className="btn">Log in</Link>
+                }
+                {
+                    user ? <button className="btn btn-outline" onClick={handleLogout}>Log out</button> : <Link to="/user/login" className="btn font-semibold rounded-none border-none bg-[#403F3F] text-white">Login</Link>
+                }
             </div>
+            <div className={`absolute flex items-center gap-4 justify-start flex-col right-0 top-16 rounded-2xl h-96 w-80 border z-10 bg-slate-100 ${profile && user !== null ? "" : "hidden"} bg-[url("/bg.svg")] bg-no-repeat bg-center bg-cover py-10`}>
+                <div className={`w-10 rounded-full`}>
+                    {
+                        user?.photoURL ? <img alt="Tailwind CSS Navbar component" src={user.photoURL} /> : <img alt="Tailwind CSS Navbar component" src={defaultUser} className="rounded-full" />
+                    }
+                </div>
+                <h1 className="text-white text-xl">{user?.displayName}</h1>
+                <Link to="/view-profile" className="btn">View Profile</Link>
+
+            </div>
+
         </div>
     )
 }
