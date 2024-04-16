@@ -54,7 +54,7 @@ export default function Navbar() {
 
                         <div className={`w-10 rounded-full`}>
                             {
-                                user?.photoURL ? <img alt="Tailwind CSS Navbar component" src={user.photoURL} /> : <img alt="Tailwind CSS Navbar component" src={defaultUser} />
+                                user?.photoURL ? <img src={user.photoURL} /> : <img src={defaultUser} />
                             }
 
                         </div>
@@ -67,7 +67,7 @@ export default function Navbar() {
             <div className={`absolute flex items-center gap-4 justify-start flex-col right-0 top-16 rounded-2xl h-96 w-80 border z-10 bg-slate-100 ${profile && user !== null ? "" : "hidden"} bg-[url("/bg.svg")] bg-no-repeat bg-center bg-cover py-10`}>
                 <div className={`w-10 rounded-full`}>
                     {
-                        user?.photoURL ? <img alt="Tailwind CSS Navbar component" src={user.photoURL} /> : <img alt="Tailwind CSS Navbar component" src={defaultUser} className="rounded-full" />
+                        user?.photoURL ? <img src={user.photoURL} /> : <img src={defaultUser} className="rounded-full" />
                     }
                 </div>
                 <h1 className="text-white text-xl">{user?.displayName}</h1>

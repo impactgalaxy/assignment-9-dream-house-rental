@@ -7,7 +7,7 @@ import { useContext } from "react";
 import { AuthContext } from "../../contextProvider/ContextProvider";
 
 export default function Login() {
-    const { signInUser, loginWithGoogle } = useContext(AuthContext);
+    const { signInUser, loginWithGoogle, loginWithGithub } = useContext(AuthContext);
     const navigation = useNavigation();
     const location = useLocation();
     console.log(location);
@@ -27,13 +27,21 @@ export default function Login() {
         console.log(email, password);
 
     }
+    // google Login
     const googleLogin = () => {
         loginWithGoogle().then(result => {
             console.log(result.user);
         }).catch(error => {
             console.log(error);
         })
-
+    }
+    // github Login
+    const githubLogin = () => {
+        loginWithGithub().then(result => {
+            console.log(result.user);
+        }).catch(error => {
+            console.log(error);
+        })
 
     }
     return (
@@ -53,7 +61,7 @@ export default function Login() {
                     <p className="font-bold text-right my-3">Don&apos;t have an account? <Link className="text-green-800" to="/user/signUp">Sign Up</Link></p>
                     <div className="grid grid-cols-2 gap-4 justify-items-center">
                         <button className="btn btn-outline btn-block" onClick={googleLogin}>Google <FcGoogle></FcGoogle></button>
-                        <button className="btn btn-outline btn-block">Github <FaGithub></FaGithub></button>
+                        <button className="btn btn-outline btn-block" onClick={githubLogin}>Github <FaGithub></FaGithub></button>
                         <button className="btn btn-outline btn-block">Facebook <FaFacebookF className="text-blue-600"></FaFacebookF></button>
                         <button className="btn btn-outline btn-block">Twitter <FaXTwitter className="text-blue-600"></FaXTwitter></button>
                     </div>
