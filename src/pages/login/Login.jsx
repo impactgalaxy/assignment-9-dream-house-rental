@@ -1,4 +1,4 @@
-import { Link, useLocation, useNavigation } from "react-router-dom";
+import { Link, useLocation, useNavigate } from "react-router-dom";
 import { FcGoogle } from "react-icons/fc";
 import { FaGithub, FaFacebookF } from "react-icons/fa";
 import { FaXTwitter } from "react-icons/fa6";
@@ -8,7 +8,8 @@ import { AuthContext } from "../../contextProvider/ContextProvider";
 
 export default function Login() {
     const { signInUser, loginWithGoogle, loginWithGithub } = useContext(AuthContext);
-    const navigation = useNavigation();
+    const navigation = useNavigate();
+    console.log(navigation);
     const location = useLocation();
     console.log(location);
 
@@ -19,7 +20,7 @@ export default function Login() {
         signInUser(email, password)
             .then(result => {
                 console.log(result.user);
-                navigation(location.pathname);
+                navigation(location.state);
 
             }).catch(error => {
                 console.log(error);
@@ -31,6 +32,7 @@ export default function Login() {
     const googleLogin = () => {
         loginWithGoogle().then(result => {
             console.log(result.user);
+            navigation(location.state);
         }).catch(error => {
             console.log(error);
         })
@@ -39,6 +41,7 @@ export default function Login() {
     const githubLogin = () => {
         loginWithGithub().then(result => {
             console.log(result.user);
+            navigation(location.pathname);
         }).catch(error => {
             console.log(error);
         })
@@ -47,7 +50,7 @@ export default function Login() {
     return (
         <div className="lg:*:w-1/2 flex items-center gap-5 flex-col lg:flex-row">
             <Helmet>
-                <title>Login -dream house rental</title>
+                <title>Login-dream house rental</title>
             </Helmet>
             <div className="flex items-center justify-center gap-4">
                 <h1 className="text-2xl md:text-4xl">You are most Welcome </h1>

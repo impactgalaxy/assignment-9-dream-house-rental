@@ -1,8 +1,9 @@
 import { CiLocationOn } from "react-icons/ci";
 import PropTypes from "prop-types";
+import { Link } from "react-router-dom";
 
 export default function Residential({ house }) {
-    const { id, estate_title, location, area_sqft, facilities, owner, price, house_img, status, segment_name } = house;
+    const { id, estate_title, location, area_sqft, facilities, price, house_img, status, } = house;
     return (
         <div className="card card-compact w-80 bg-base-100 shadow-xl font-poppins">
             <figure><img src={house_img} alt={estate_title} className="h-[300px] w-full block m-auto object-cover" /></figure>
@@ -15,7 +16,7 @@ export default function Residential({ house }) {
                 </div>
                 <ul className="p-4 "><span className="font-bold">Facilities</span> {facilities.map((item, idx) => <li className="list-disc" key={idx}>{item}</li>)}</ul>
                 <div className="card-actions justify-end">
-                    <button className="btn bg-gradient-to-r from-purple-500 to-pink-500">Details</button>
+                    <Link to={`/home-details/${id}`} className="btn bg-gradient-to-r from-purple-500 to-pink-500">Details</Link>
                 </div>
             </div>
             <div className="absolute flex justify-between items-center top-0 p-4 w-full">

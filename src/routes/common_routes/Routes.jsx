@@ -7,6 +7,7 @@ import SignUp from "../../pages/signUp/SignUp";
 import Profile from "../../components/profile/Profile";
 import UpdateProfile from "../../components/updateProfile/UpdateProfile";
 import PrivateRoute from "../private_routes/PrivateRoute";
+import HomeDetails from "../../components/home_details/HomeDetails";
 
 export const router = createBrowserRouter([
     {
@@ -17,6 +18,12 @@ export const router = createBrowserRouter([
             {
                 path: "/",
                 element: <Home></Home>
+
+            },
+            {
+                path: "/home-details/:id",
+                loader: () => fetch("/rentalData.json"),
+                element: <PrivateRoute><HomeDetails></HomeDetails></PrivateRoute>
 
             },
             {
