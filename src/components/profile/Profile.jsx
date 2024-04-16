@@ -1,5 +1,8 @@
 import { useContext } from "react";
 import Navbar from "../navbar/Navbar";
+import 'swiper/css/pagination';
+import 'swiper/css/navigation';
+import "../../styles.css"
 import { AuthContext } from "../../contextProvider/ContextProvider";
 // Import Swiper React components
 import { Swiper, SwiperSlide } from 'swiper/react';
@@ -27,7 +30,7 @@ export default function Profile() {
                 </div>
                 <div className="p-5 border lg:w-1/2">
                     <Swiper
-                        slidesPerView={3}
+                        slidesPerView={1}
                         spaceBetween={30}
                         pagination={{
                             clickable: true,

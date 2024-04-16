@@ -1,0 +1,28 @@
+<svg xmlns="http://www.w3.org/2000/svg" version="1.1" xmlns:xlink="http://www.w3.org/1999/xlink" xmlns:svgjs="http://svgjs.dev/svgjs" width="1440" height="250" preserveAspectRatio="none" viewBox="0 0 1440 250">
+    <g mask="url(&quot;#SvgjsMask1000&quot;)" fill="none">
+        <rect width="1440" height="250" x="0" y="0" fill="#0e2a47"></rect>
+        <path d="M17 250L267 0L403.5 0L153.5 250z" fill="url(&quot;#SvgjsLinearGradient1001&quot;)"></path>
+        <path d="M247.60000000000002 250L497.6 0L644.6 0L394.6 250z" fill="url(&quot;#SvgjsLinearGradient1001&quot;)"></path>
+        <path d="M518.2 250L768.2 0L834.2 0L584.2 250z" fill="url(&quot;#SvgjsLinearGradient1001&quot;)"></path>
+        <path d="M713.8000000000001 250L963.8000000000001 0L1157.3000000000002 0L907.3000000000001 250z" fill="url(&quot;#SvgjsLinearGradient1001&quot;)"></path>
+        <path d="M1408 250L1158 0L888 0L1138 250z" fill="url(&quot;#SvgjsLinearGradient1002&quot;)"></path>
+        <path d="M1158.4 250L908.4000000000001 0L764.4000000000001 0L1014.4000000000001 250z" fill="url(&quot;#SvgjsLinearGradient1002&quot;)"></path>
+        <path d="M917.8 250L667.8 0L618.3 0L868.3 250z" fill="url(&quot;#SvgjsLinearGradient1002&quot;)"></path>
+        <path d="M700.1999999999999 250L450.19999999999993 0L189.19999999999993 0L439.19999999999993 250z" fill="url(&quot;#SvgjsLinearGradient1002&quot;)"></path>
+        <path d="M1208.4819564678337 250L1440 18.48195646783367L1440 250z" fill="url(&quot;#SvgjsLinearGradient1001&quot;)"></path>
+        <path d="M0 250L231.51804353216633 250L 0 18.48195646783367z" fill="url(&quot;#SvgjsLinearGradient1002&quot;)"></path>
+    </g>
+    <defs>
+        <mask id="SvgjsMask1000">
+            <rect width="1440" height="250" fill="#ffffff"></rect>
+        </mask>
+        <linearGradient x1="0%" y1="100%" x2="100%" y2="0%" id="SvgjsLinearGradient1001">
+            <stop stop-color="rgba(15, 70, 185, 0.2)" offset="0"></stop>
+            <stop stop-opacity="0" stop-color="rgba(15, 70, 185, 0.2)" offset="0.66"></stop>
+        </linearGradient>
+        <linearGradient x1="100%" y1="100%" x2="0%" y2="0%" id="SvgjsLinearGradient1002">
+            <stop stop-color="rgba(15, 70, 185, 0.2)" offset="0"></stop>
+            <stop stop-opacity="0" stop-color="rgba(15, 70, 185, 0.2)" offset="0.66"></stop>
+        </linearGradient>
+    </defs>
+</svg>

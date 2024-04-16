@@ -9,14 +9,17 @@ export default function Residential({ house }) {
             <div className="card-body">
                 <div className="flex text-lg gap-1 items-center"><CiLocationOn></CiLocationOn> {location}</div>
                 <h2 className="card-title">{estate_title}</h2>
-                <p>If a dog chews shoes whose shoes does he choose?</p>
-                <p>Area: {area_sqft} sq ft</p>
+                <div className="flex justify-between">
+                    <p>Area: {area_sqft} sq ft</p>
+                    <p>{status === "rent" ? `$ ${price} per night` : `Price: $ ${price}`}</p>
+                </div>
+                <ul className="p-4 "><span className="font-bold">Facilities</span> {facilities.map((item, idx) => <li className="list-disc" key={idx}>{item}</li>)}</ul>
                 <div className="card-actions justify-end">
-                    <button className="btn btn-primary">Details</button>
+                    <button className="btn bg-gradient-to-r from-purple-500 to-pink-500">Details</button>
                 </div>
             </div>
             <div className="absolute flex justify-between items-center top-0 p-4 w-full">
-                <button className="btn btn-primary text-white -rotate-45">{status}</button>
+                <button className="btn bg-gradient-to-r from-cyan-500 to-blue-500 text-white -rotate-12">For {status}</button>
                 <button className="btn btn-accent text-white">Featured</button>
             </div>
         </div>

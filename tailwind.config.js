@@ -13,7 +13,7 @@ export default {
 
     extend: {
       backgroundImage: {
-        'banner': "url('https://i.ibb.co/ZW9n29d/harper-van-mourik-0yf-WDw-HOB0g-unsplash.jpg')",
+        'banner': "url('/banner.svg')",
       }
     },
   },
