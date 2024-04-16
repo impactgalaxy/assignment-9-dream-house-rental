@@ -1,4 +1,4 @@
-import { Link } from "react-router-dom";
+import { Link, useLocation, useNavigation } from "react-router-dom";
 import { FcGoogle } from "react-icons/fc";
 import { FaGithub, FaFacebookF } from "react-icons/fa";
 import { FaXTwitter } from "react-icons/fa6";
@@ -8,6 +8,10 @@ import { AuthContext } from "../../contextProvider/ContextProvider";
 
 export default function Login() {
     const { signInUser, loginWithGoogle } = useContext(AuthContext);
+    const navigation = useNavigation();
+    const location = useLocation();
+    console.log(location);
+
     const signInUserWithEAndP = (e) => {
         e.preventDefault();
         const email = e.target.email.value;
@@ -15,6 +19,8 @@ export default function Login() {
         signInUser(email, password)
             .then(result => {
                 console.log(result.user);
+                navigation(location.pathname);
+
             }).catch(error => {
                 console.log(error);
             });
