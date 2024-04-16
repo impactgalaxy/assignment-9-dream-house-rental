@@ -14,7 +14,10 @@ export default {
     extend: {
       backgroundImage: {
         'banner': "url('/banner.svg')",
-        'segmentBg': "url('/segment.svg')"
+        'segmentBg': "url('/segment.svg')",
+        'house': "url('https://i.ibb.co/T1Tqdf3/r-architecture-Jv-Q0-Q5-Ike-MM-unsplash.jpg')",
+        'map': "url('/map.svg')",
+        'polygon': "url('/polygon.svg')"
       }
     },
   },
