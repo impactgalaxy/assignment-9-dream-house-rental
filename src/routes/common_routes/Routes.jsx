@@ -10,6 +10,7 @@ import PrivateRoute from "../private_routes/PrivateRoute";
 import HomeDetails from "../../components/home_details/HomeDetails";
 import HouseForRent from "../../components/house_rent/HouseForRent";
 import HouseForSale from "../../components/house_sale/HouseForSale";
+import RentOrSaleConfirm from "../../components/rent_or_sale_confirm/RentOrSaleConfirm";
 
 export const router = createBrowserRouter([
     {
@@ -51,7 +52,12 @@ export const router = createBrowserRouter([
             {
                 path: "/house-for-sale",
                 element: <HouseForSale></HouseForSale>
+            },
+            {
+                path: "/confirm-your-dream",
+                element: <PrivateRoute><RentOrSaleConfirm></RentOrSaleConfirm></PrivateRoute>
             }
+
         ]
     }
 ])

@@ -1,23 +1,19 @@
-import { useContext, useEffect, useState } from "react"
+import { useEffect, useState } from "react"
 import AOS from 'aos';
 import 'aos/dist/aos.css';
 import { Helmet } from "react-helmet";
 import { useNavigate } from "react-router-dom";
-import { AuthContext } from "../../contextProvider/ContextProvider";
 AOS.init();
 export default function HouseForSale() {
     const [rent, setRent] = useState([]);
     const navigate = useNavigate();
-    const { toast } = useContext(AuthContext);
-
     useEffect(() => {
         fetch("/rentalData.json").then(res => res.json()).then(data => setRent(data));
 
     }, [])
     const d = rent.filter(item => item.status === "sale");
     const confirm = () => {
-        toast.success("Congratulations! Yoy buy your dream house");
-        navigate("/");
+        navigate("/confirm-your-dream");
     }
 
     return (
@@ -25,7 +21,7 @@ export default function HouseForSale() {
             <Helmet>
                 <title>House for Sale</title>
             </Helmet>
-            <div className="min-h-[calc(100vh-80px)] border bg-map bg-center bg-no-repeat bg-cover">
+            <div className="min-h-[calc(100vh-80px)] bg-map bg-center bg-no-repeat bg-cover">
 
             </div>
             <div className="w-1/2 m-auto p-4 lg:p-10 text-center space-y-5">

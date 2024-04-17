@@ -7,8 +7,7 @@ You can see hare your houses for rent or Buy;
 
 _please click the following link_
 
-- [Dream House Rental](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react/README.md) uses [Babel](https://babeljs.io/) for Fast Refresh
-- [@vitejs/plugin-react-swc](https://github.com/vitejs/vite-plugin-react-swc) uses [SWC](https://swc.rs/) for Fast Refresh
+- [Dream House Rental](https://assignment-9-auth-42654.web.app)
 
 # Features
 - users can easily create an account
@@ -25,7 +24,8 @@ _here are some_
 - react-router-dom
 - react helmate
 - react toastify
+- react hook form
 - and many more 
  ## Don't waste your valuable time Just click on the link and enjoy your dream house
 
-[Dream House Rental](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react/README.md)
+[Dream House Rental](https://assignment-9-auth-42654.web.app)

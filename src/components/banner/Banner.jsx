@@ -10,7 +10,7 @@ export default function Banner() {
             <div className="p-3 md:p-6 lg:p-8 text-center space-y-6 ">
                 <h1 className="md:text-2xl lg:text-5xl font-black text-white">Make Your Home</h1>
                 <p className="text-xl text-white">Make Your Dream</p>
-                <p>Buy Your Happiness</p>
+                <p className="text-white">Buy Your Happiness</p>
             </div>
 
             <Swiper

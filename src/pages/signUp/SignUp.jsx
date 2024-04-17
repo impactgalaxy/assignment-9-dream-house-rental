@@ -1,8 +1,5 @@
 import { Helmet } from "react-helmet";
 import { Link, useNavigate } from "react-router-dom";
-import { FcGoogle } from "react-icons/fc";
-import { FaGithub, FaFacebookF } from "react-icons/fa";
-import { FaXTwitter } from "react-icons/fa6";
 import { IoMdEyeOff, IoMdEye } from "react-icons/io";
 import { useContext, useState } from "react";
 import { AuthContext } from "../../contextProvider/ContextProvider";
@@ -45,14 +42,8 @@ export default function SignUp() {
                 <div>
                     <h1 className="text-3xl font-semibold">Sign Up</h1>
                     <p className="font-bold text-right my-3">Already have an account? <Link className="text-green-800" to="/user/login">Sign in</Link></p>
-                    <div className="grid grid-cols-2 gap-4 justify-items-center">
-                        <button className="btn btn-outline btn-block">Google <FcGoogle></FcGoogle></button>
-                        <button className="btn btn-outline btn-block">Github <FaGithub></FaGithub></button>
-                        <button className="btn btn-outline btn-block">Facebook <FaFacebookF className="text-blue-600"></FaFacebookF></button>
-                        <button className="btn btn-outline btn-block">Twitter <FaXTwitter className="text-blue-600"></FaXTwitter></button>
-                    </div>
+
                 </div>
-                <div className="divider my-8">OR</div>
                 <div >
                     <div>
                         <form onSubmit={handleRegister}>
@@ -67,9 +58,7 @@ export default function SignUp() {
                                 <div className="absolute top-1/2 -translate-y-1/2 right-4 *:text-2xl cursor-pointer" onClick={() => setPassword(!showPassword)}>
                                     {
                                         showPassword ? <IoMdEye></IoMdEye> : <IoMdEyeOff></IoMdEyeOff>
-
                                     }
-
                                 </div>
                             </label>
                             <label className="input input-bordered flex items-center gap-2 mb-3">
