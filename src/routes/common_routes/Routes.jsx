@@ -36,7 +36,7 @@ export const router = createBrowserRouter([
             },
             {
                 path: "/user-profile",
-                element: <Profile></Profile>
+                element: <PrivateRoute><Profile></Profile></PrivateRoute>
             },
             {
                 path: "/update-profile",

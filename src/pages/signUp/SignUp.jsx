@@ -1,5 +1,5 @@
 import { Helmet } from "react-helmet";
-import { Link } from "react-router-dom";
+import { Link, useNavigate } from "react-router-dom";
 import { FcGoogle } from "react-icons/fc";
 import { FaGithub, FaFacebookF } from "react-icons/fa";
 import { FaXTwitter } from "react-icons/fa6";
@@ -9,28 +9,27 @@ import { AuthContext } from "../../contextProvider/ContextProvider";
 export default function SignUp() {
     const [showPassword, setPassword] = useState(false);
     const [warning, setWarning] = useState("");
-    const { createUser } = useContext(AuthContext);
+    const navigate = useNavigate();
+    const { createUser, toast } = useContext(AuthContext);
 
     const handleRegister = (e) => {
-
         e.preventDefault();
         const regEx = /^(?=.*[a-z])(?=.*[A-Z]).{6,}$/;
-        const name = e.target.name.value;
         const email = e.target.email.value;
         const password = e.target.password.value;
-        const photo = e.target.photo.value;
         if (!regEx.test(password)) {
+            toast.error("Sorry! Try again");
             return setWarning("Please ensure at least one lowercase letter at least one uppercase letter and 6 character in length");
         }
         createUser(email, password)
-            .then(result => {
-                console.log(result.user);
+            .then(() => {
+                toast.success("You successfully sign up");
+                navigate("/");
             })
             .catch(error => {
-                console.log(error);
+                const e = error.message.split("/")[1].split("-")[0];
+                toast.error(`Sorry! ${e}`);
             })
-
-        console.log(name, email, photo);
     }
     return (
         <div className="lg:*:w-1/2 flex items-center gap-5 flex-col lg:flex-row">

@@ -5,18 +5,17 @@ import defaultUser from "../../assets/user.png"
 
 export default function Navbar() {
     const [profile, setProfile] = useState(false);
-    const { user, userLogout } = useContext(AuthContext);
+    const { user, userLogout, toast } = useContext(AuthContext);
     const handleLogout = () => {
         userLogout()
             .then(() => {
-                console.log("logout successfully");
+                toast.success("Logout successful");
             })
             .catch(error => {
-                console.log(error);
+                const e = error.message.split("/")[1].split("-")[0];
+                toast.error(`Sorry! ${e}`);
             })
     }
-    console.log(profile);
-
     const navLinks = (
         <>
             <li><NavLink to="/" className={({ isActive }) => isActive ? "text-green-700 border-b" : ""}>Home</NavLink></li>
@@ -30,7 +29,7 @@ export default function Navbar() {
         </>
     )
     return (
-        <div className="navbar bg-base-100 font-poppins font-bold flex items-center justify-between z-10 border">
+        <div className="navbar bg-base-100 font-poppins font-bold flex items-center justify-between z-10">
             <div>
                 <div className="dropdown">
                     <div tabIndex={0} role="button" className="btn btn-ghost lg:hidden">
@@ -71,7 +70,7 @@ export default function Navbar() {
                     }
                 </div>
                 <h1 className="text-white text-xl">{user?.displayName}</h1>
-                <Link to="/view-profile" className="btn">View Profile</Link>
+                <Link to="/user-profile" className="btn">View Profile</Link>
 
             </div>
 

@@ -2,6 +2,8 @@ import { GithubAuthProvider, GoogleAuthProvider, createUserWithEmailAndPassword,
 import { createContext, useEffect, useState } from "react";
 import PropTypes from "prop-types";
 import auth from "../../firebase.init";
+import { ToastContainer, toast } from 'react-toastify';
+import 'react-toastify/dist/ReactToastify.css';
 
 const googleProvider = new GoogleAuthProvider();
 const githubProvider = new GithubAuthProvider();
@@ -33,7 +35,6 @@ export default function ContextProvider({ children }) {
         return signOut(auth);
     }
     const userProfileUpdate = (name, photo) => {
-        setLoading(true);
         return updateProfile(auth.currentUser, {
             displayName: name,
             photoURL: photo,
@@ -48,7 +49,8 @@ export default function ContextProvider({ children }) {
         userLogout,
         userProfileUpdate,
         user,
-        loading
+        loading,
+        toast
     }
     useEffect(() => {
         const userCondition = onAuthStateChanged(auth, (currentUser) => {
@@ -64,7 +66,7 @@ export default function ContextProvider({ children }) {
     return (
         <AuthContext.Provider value={information}>
             {children}
-
+            <ToastContainer></ToastContainer>
         </AuthContext.Provider>
     )
 }

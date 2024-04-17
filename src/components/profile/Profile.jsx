@@ -23,9 +23,9 @@ export default function Profile() {
             <div className="flex items-center flex-col lg:flex-row ">
                 <div className="p-5 lg:w-1/2">
                     <h1 className="text-2xl text-white">Hi, {user?.displayName || 'Abroad'}</h1>
-                    <p>Your Email {user?.email || <Link to="/user/login" className="font-black">Please log in</Link>}</p>
+                    <p>Your Email: {user?.email || "Not found"}</p>
                     {
-                        user && <button className="btn">Update Profile</button>
+                        user && <Link to="/update-profile" className="btn my-7">Update Profile</Link>
                     }
                 </div>
                 <div className="p-5 border lg:w-1/2">

@@ -10,9 +10,17 @@ import 'swiper/css';
 import 'swiper/css/effect-flip';
 import 'swiper/css/pagination';
 import 'swiper/css/navigation';
-
 import './style.css';
 import { EffectFlip, Pagination, Navigation } from 'swiper/modules';
+// react leaflet
+import { MapContainer } from 'react-leaflet/MapContainer'
+import { TileLayer } from 'react-leaflet/TileLayer'
+// import { useMap } from 'react-leaflet/hooks';
+import { Marker, Popup } from "react-leaflet";
+// Aos
+import AOS from 'aos';
+import 'aos/dist/aos.css';
+AOS.init();
 
 
 export default function HomeDetails() {
@@ -29,23 +37,39 @@ export default function HomeDetails() {
     return (
         <div>
             <Helmet>
-                <title>Home details |{id}</title>
+                <title>Home details|{id}</title>
             </Helmet>
 
             {
                 filterData.map(item => {
                     return (
                         <div key={item.id}>
-                            <div className="bg-blue-600 text-white p-3">
+                            <div className="bg-blue-600 text-white p-4 flex justify-between">
                                 <p className="flex items-center gap-2"><CiLocationOn></CiLocationOn> {item.location}</p>
+                                <p className="font-bold">Only for {item.status}</p>
                             </div>
                             <Navbar></Navbar>
                             <div className="h-60 flex items-center justify-center bg-segmentBg bg-center bg-no-repeat bg-cover my-10">
-                                <h1 className="text-4xl font-bold text-white">{item.segment_name}</h1>
+                                <h1 className="text-4xl font-bold text-white">{item.segment_name}/<span className="text-purple-500">{item.estate_title}</span></h1>
                             </div>
                             <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 justify-items-center gap-3">
                                 <div className="md:col-span-2 lg:col-span-3">
-                                    <div>
+                                    <div className="h-[500px] border-2">
+                                        <MapContainer center={[234550, 922520]} zoom={13} scrollWheelZoom={false}>
+                                            <TileLayer
+                                                attribution='&copy; <a href="https://www.openstreetmap.org/copyright">OpenStreetMap</a> contributors'
+                                                url="https://{s}.tile.openstreetmap.org/{z}/{x}/{y}.png"
+                                            />
+                                            <Marker position={[51.505, -0.09]}>
+                                                <Popup>
+                                                    A pretty CSS3 popup. <br /> Easily customizable.
+                                                </Popup>
+                                            </Marker>
+                                        </MapContainer>
+
+                                    </div>
+                                    <hr></hr>
+                                    <div className="p-4">
                                         <p>
                                             {item.house_description}
                                         </p>
@@ -58,43 +82,54 @@ export default function HomeDetails() {
                                     </div>
                                     <div>
                                         <h1 className="text-2xl font-bold py-4 border-b">Related House and Apartments</h1>
+                                        <div className="h-96 p-4">
+                                            <Swiper
+                                                effect={'flip'}
+                                                grabCursor={true}
+                                                pagination={true}
+                                                navigation={true}
+                                                modules={[EffectFlip, Pagination, Navigation]}
+                                                className="mySwiper"
+                                            >
+                                                <SwiperSlide>
+                                                    <img src="https://swiperjs.com/demos/images/nature-1.jpg" />
+                                                </SwiperSlide>
+                                                <SwiperSlide>
+                                                    <img src="https://swiperjs.com/demos/images/nature-2.jpg" />
+                                                </SwiperSlide>
+                                                <SwiperSlide>
+                                                    <img src="https://swiperjs.com/demos/images/nature-3.jpg" />
+                                                </SwiperSlide>
+                                                <SwiperSlide>
+                                                    <img src="https://swiperjs.com/demos/images/nature-4.jpg" />
+                                                </SwiperSlide>
+                                                <SwiperSlide>
+                                                    <img src="https://swiperjs.com/demos/images/nature-5.jpg" />
+                                                </SwiperSlide>
+                                                <SwiperSlide>
+                                                    <img src="https://swiperjs.com/demos/images/nature-6.jpg" />
+                                                </SwiperSlide>
+                                            </Swiper>
+                                        </div>
+                                        <div className="w-1/2 p-4 my-12">
+                                            <h1 className="text-2xl font-bold py-4 border-b">Contact</h1>
+                                            <div className="*:p-4 *:border-b">
+                                                <p>Owner of the house : <span className="font-black" data-aos="fade-left">{item.owner}</span></p>
+                                                <p>Office time : <span className="font-black" data-aos="fade-right">Morning 7 to night 7</span></p>
+                                                <p>Address : <span className="font-black" data-aos="fade-up">Plot 6/A, Banani Dhaka</span></p>
+                                                <p>Call: <span className="font-black" data-aos="fade-down">+880123456789</span></p>
+                                            </div>
+                                        </div>
 
                                     </div>
-                                    <div className="h-96">
-                                        <Swiper
-                                            effect={'flip'}
-                                            grabCursor={true}
-                                            pagination={true}
-                                            navigation={true}
-                                            modules={[EffectFlip, Pagination, Navigation]}
-                                            className="mySwiper"
-                                        >
-                                            <SwiperSlide>
-                                                <img src="https://swiperjs.com/demos/images/nature-1.jpg" />
-                                            </SwiperSlide>
-                                            <SwiperSlide>
-                                                <img src="https://swiperjs.com/demos/images/nature-2.jpg" />
-                                            </SwiperSlide>
-                                            <SwiperSlide>
-                                                <img src="https://swiperjs.com/demos/images/nature-3.jpg" />
-                                            </SwiperSlide>
-                                            <SwiperSlide>
-                                                <img src="https://swiperjs.com/demos/images/nature-4.jpg" />
-                                            </SwiperSlide>
-                                            <SwiperSlide>
-                                                <img src="https://swiperjs.com/demos/images/nature-5.jpg" />
-                                            </SwiperSlide>
-                                            <SwiperSlide>
-                                                <img src="https://swiperjs.com/demos/images/nature-6.jpg" />
-                                            </SwiperSlide>
-                                        </Swiper>
-                                    </div>
-
                                 </div>
                                 <div>
                                     <div className="border-t-2 rounded-lg bg-blue-600 text-center text-2xl p-3">
-                                        <p className="border-b"><span className="text-3xl">${item.price}</span> per day</p>
-                                        <p><span className="text-3xl">${item.price * 3}</span> per month</p>
+                                        {item.status === "sale" ? <p>Only <span className="text-3xl">${item.price}</span></p> :
+                                            <>
+                                                <p className="border-b"><span className="text-3xl">${item.price}</span> per day</p>
+                                                <p><span className="text-3xl">${item.price * 3}</span> per month</p>
+                                            </>}
                                     </div>
                                     <div className="space-y-5 bg-banner bg-cover bg-no-repeat py-5">
                                         <label htmlFor="name" className="block p-2">
@@ -112,7 +147,7 @@ export default function HomeDetails() {
                                         <label htmlFor="name" className="block p-2">
                                             <input type="date" name="" id="" className="input w-full" placeholder="Pick your date" />
                                         </label>
-                                        <button className="btn btn-accent btn-block">Instant Book</button>
+                                        <button className="btn btn-accent btn-block">{item.status === "sale" ? "Buy Now" : "Instant Book"}</button>
 
                                     </div>
 

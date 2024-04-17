@@ -1,8 +1,10 @@
 import { useContext } from "react";
 import { AuthContext } from "../../contextProvider/ContextProvider";
+import { useNavigate } from "react-router-dom";
 
 export default function UpdateProfile() {
-    const { userProfileUpdate } = useContext(AuthContext);
+    const { userProfileUpdate, toast } = useContext(AuthContext);
+    const navigate = useNavigate();
     const updateProfile = (e) => {
         e.preventDefault();
         const name = e.target.name.value;
@@ -11,13 +13,14 @@ export default function UpdateProfile() {
 
         userProfileUpdate(name, photoUrl)
             .then(() => {
-                console.log("Profile Update successfully");
+                navigate("/user-profile");
+                toast.success("Profile Update successfully");
+
             })
             .catch(error => {
-                console.log(error);
+                const e = error.message.split("/")[1].split("-")[0];
+                toast.error(`Sorry! ${e}`);
             })
-        console.log(name, photoUrl);
-
     }
     return (
         <div className="lg:w-1/2 m-auto text-center p-3 md:p-6">
