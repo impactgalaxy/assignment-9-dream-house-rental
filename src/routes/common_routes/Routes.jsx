@@ -8,6 +8,8 @@ import Profile from "../../components/profile/Profile";
 import UpdateProfile from "../../components/updateProfile/UpdateProfile";
 import PrivateRoute from "../private_routes/PrivateRoute";
 import HomeDetails from "../../components/home_details/HomeDetails";
+import HouseForRent from "../../components/house_rent/HouseForRent";
+import HouseForSale from "../../components/house_sale/HouseForSale";
 
 export const router = createBrowserRouter([
     {
@@ -41,6 +43,14 @@ export const router = createBrowserRouter([
             {
                 path: "/update-profile",
                 element: <PrivateRoute><UpdateProfile></UpdateProfile></PrivateRoute>
+            },
+            {
+                path: "/house-for-rent",
+                element: <HouseForRent></HouseForRent>
+            },
+            {
+                path: "/house-for-sale",
+                element: <HouseForSale></HouseForSale>
             }
         ]
     }

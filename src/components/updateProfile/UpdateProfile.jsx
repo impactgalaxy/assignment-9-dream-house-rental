@@ -1,6 +1,7 @@
 import { useContext } from "react";
 import { AuthContext } from "../../contextProvider/ContextProvider";
 import { useNavigate } from "react-router-dom";
+import { Helmet } from "react-helmet";
 
 export default function UpdateProfile() {
     const { userProfileUpdate, toast } = useContext(AuthContext);
@@ -24,6 +25,9 @@ export default function UpdateProfile() {
     }
     return (
         <div className="lg:w-1/2 m-auto text-center p-3 md:p-6">
+            <Helmet>
+                <title>Update Profile</title>
+            </Helmet>
             <h1 className="py-5 text-2xl">Here you are going to update your profile</h1>
             <div>
                 <form onSubmit={updateProfile}>

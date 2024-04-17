@@ -3,7 +3,6 @@ import { Helmet } from "react-helmet";
 import { useLoaderData, useParams } from "react-router-dom";
 import { CiLocationOn } from "react-icons/ci";
 import { BsCheck2Circle } from "react-icons/bs";
-import Footer from '../footer/Footer';
 import { Swiper, SwiperSlide } from 'swiper/react';
 import 'swiper/css';
 import 'swiper/css/effect-flip';
@@ -11,11 +10,8 @@ import 'swiper/css/pagination';
 import 'swiper/css/navigation';
 import './style.css';
 import { EffectFlip, Pagination, Navigation } from 'swiper/modules';
-// react leaflet
-import { MapContainer } from 'react-leaflet/MapContainer'
-import { TileLayer } from 'react-leaflet/TileLayer'
-// import { useMap } from 'react-leaflet/hooks';
-import { Marker, Popup } from "react-leaflet";
+// animate css
+import 'animate.css';
 // Aos
 import AOS from 'aos';
 import 'aos/dist/aos.css';
@@ -36,7 +32,7 @@ export default function HomeDetails() {
     return (
         <div>
             <Helmet>
-                <title>Home details|{id}</title>
+                <title>Home details | {id}</title>
             </Helmet>
 
             {
@@ -52,18 +48,11 @@ export default function HomeDetails() {
                             </div>
                             <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 justify-items-center gap-3">
                                 <div className="md:col-span-2 lg:col-span-3">
-                                    <div className="h-[500px] border-2">
-                                        <MapContainer center={[234550, 922520]} zoom={13} scrollWheelZoom={false}>
-                                            <TileLayer
-                                                attribution='&copy; <a href="https://www.openstreetmap.org/copyright">OpenStreetMap</a> contributors'
-                                                url="https://{s}.tile.openstreetmap.org/{z}/{x}/{y}.png"
-                                            />
-                                            <Marker position={[51.505, -0.09]}>
-                                                <Popup>
-                                                    A pretty CSS3 popup. <br /> Easily customizable.
-                                                </Popup>
-                                            </Marker>
-                                        </MapContainer>
+                                    <div className="p-4 lg:p-8 gap-5 flex flex-col items-center">
+                                        <h1 className="animate__animated  animate__infinite animate__heartBeat text-4xl text-red-700">Hot offer</h1>
+                                        <h1 className="animate__animated animate__repeat-3	 animate__heartBeat animate__lightSpeedInRight">Congratulations your dreams will come true</h1>
+                                        <p className="text-green-400 animate__animated  animate__repeat-3 animate__flip animate__delay-3s">Don&apos;t delay to confirm your fantastic home</p>
+                                        <button className="btn btn-outline bg-gradient-to-r from-cyan-500 to-blue-500 text-xl border-none">22% discount only for you </button>
 
                                     </div>
                                     <hr></hr>
@@ -90,23 +79,30 @@ export default function HomeDetails() {
                                                 className="mySwiper"
                                             >
                                                 <SwiperSlide>
-                                                    <img src="https://swiperjs.com/demos/images/nature-1.jpg" />
+                                                    <div className="h-80 ">
+                                                        <img src="https://i.ibb.co/kMnQCmF/yansi-keim-4-U19-TDp1bw-unsplash.jpg" alt="" className="h-1/2 object-cover" />
+
+                                                    </div>
                                                 </SwiperSlide>
                                                 <SwiperSlide>
-                                                    <img src="https://swiperjs.com/demos/images/nature-2.jpg" />
+                                                    <div className="h-80 ">
+                                                        <img src="https://i.ibb.co/T1Tqdf3/r-architecture-Jv-Q0-Q5-Ike-MM-unsplash.jpg" alt="" className="h-1/2 object-cover" />
+
+                                                    </div>
                                                 </SwiperSlide>
                                                 <SwiperSlide>
-                                                    <img src="https://swiperjs.com/demos/images/nature-3.jpg" />
+                                                    <div className="h-80 ">
+                                                        <img src="https://i.ibb.co/KFnFjxH/gus-ruballo-h5-QNcl-JUi-A8-unsplash.jpg" alt="" className="h-1/2 object-cover" />
+
+                                                    </div>
                                                 </SwiperSlide>
                                                 <SwiperSlide>
-                                                    <img src="https://swiperjs.com/demos/images/nature-4.jpg" />
+                                                    <div className="h-80 ">
+                                                        <img src="https://i.ibb.co/sqYwxV2/daria-nepriakhina-MUR3s5-Fez-Jc-unsplash.jpg" alt="" className="h-1/2 object-cover" />
+
+                                                    </div>
                                                 </SwiperSlide>
-                                                <SwiperSlide>
-                                                    <img src="https://swiperjs.com/demos/images/nature-5.jpg" />
-                                                </SwiperSlide>
-                                                <SwiperSlide>
-                                                    <img src="https://swiperjs.com/demos/images/nature-6.jpg" />
-                                                </SwiperSlide>
+
                                             </Swiper>
                                         </div>
                                         <div className="w-1/2 p-4 my-12">
@@ -155,9 +151,6 @@ export default function HomeDetails() {
                     )
                 })
             }
-            <Footer></Footer>
-
-
         </div>
     )
 }

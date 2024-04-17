@@ -15,11 +15,15 @@ import 'swiper/css/pagination';
 // import required modules
 import { Pagination, Autoplay } from 'swiper/modules';
 import { Link } from "react-router-dom";
+import { Helmet } from "react-helmet";
 
 export default function Profile() {
     const { user } = useContext(AuthContext);
     return (
         <div>
+            <Helmet>
+                <title>Profile</title>
+            </Helmet>
             <Navbar></Navbar>
             <div className="flex items-center flex-col lg:flex-row ">
                 <div className="p-5 lg:w-1/2">

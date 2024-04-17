@@ -20,7 +20,7 @@ export default function Navbar() {
         <>
             <li><NavLink to="/" className={({ isActive }) => isActive ? "text-green-700 border-b" : ""}>Home</NavLink></li>
             <li><NavLink to="/house-for-rent" className={({ isActive }) => isActive ? "text-green-700 border-b" : ""}>House for Rent</NavLink></li>
-            <li><NavLink to="/house-for-sell" className={({ isActive }) => isActive ? "text-green-700 border-b" : ""}>House for Sell</NavLink></li>
+            <li><NavLink to="/house-for-sale" className={({ isActive }) => isActive ? "text-green-700 border-b" : ""}>House for Sale</NavLink></li>
             <li><NavLink to="/update-profile" className={({ isActive }) => isActive ? "text-green-700 border-b" : ""}>Update Profile</NavLink></li>
 
             {
