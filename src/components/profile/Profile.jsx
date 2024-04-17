@@ -2,7 +2,8 @@ import { useContext } from "react";
 import Navbar from "../navbar/Navbar";
 import 'swiper/css/pagination';
 import 'swiper/css/navigation';
-import "../../styles.css"
+import "../../styles.css";
+import defaultUser from "../../assets/user.png"
 import { AuthContext } from "../../contextProvider/ContextProvider";
 // Import Swiper React components
 import { Swiper, SwiperSlide } from 'swiper/react';
@@ -22,13 +23,14 @@ export default function Profile() {
             <Navbar></Navbar>
             <div className="flex items-center flex-col lg:flex-row ">
                 <div className="p-5 lg:w-1/2">
+                    <img src={user.photoURL || defaultUser} className="block m-auto w-28 h-28 rounded-full" alt="" />
                     <h1 className="text-2xl text-white">Hi, {user?.displayName || 'Abroad'}</h1>
                     <p>Your Email: {user?.email || "Not found"}</p>
                     {
                         user && <Link to="/update-profile" className="btn my-7">Update Profile</Link>
                     }
                 </div>
-                <div className="p-5 border lg:w-1/2">
+                <div className="p-5 lg:w-1/2">
                     <Swiper
                         slidesPerView={1}
                         spaceBetween={30}

@@ -2,7 +2,6 @@ import { useEffect, useState } from "react";
 import { Helmet } from "react-helmet";
 import { useLoaderData, useParams } from "react-router-dom";
 import { CiLocationOn } from "react-icons/ci";
-import Navbar from "../navbar/Navbar";
 import { BsCheck2Circle } from "react-icons/bs";
 import Footer from '../footer/Footer';
 import { Swiper, SwiperSlide } from 'swiper/react';
@@ -48,7 +47,6 @@ export default function HomeDetails() {
                                 <p className="flex items-center gap-2"><CiLocationOn></CiLocationOn> {item.location}</p>
                                 <p className="font-bold">Only for {item.status}</p>
                             </div>
-                            <Navbar></Navbar>
                             <div className="h-60 flex items-center justify-center bg-segmentBg bg-center bg-no-repeat bg-cover my-10">
                                 <h1 className="text-4xl font-bold text-white">{item.segment_name}/<span className="text-purple-500">{item.estate_title}</span></h1>
                             </div>

@@ -1,7 +1,7 @@
 import { useContext, useState } from "react"
 import { Link, NavLink } from "react-router-dom"
 import { AuthContext } from "../../contextProvider/ContextProvider";
-import defaultUser from "../../assets/user.png"
+import defaultUser from "../../assets/user.png";
 
 export default function Navbar() {
     const [profile, setProfile] = useState(false);
@@ -29,7 +29,7 @@ export default function Navbar() {
         </>
     )
     return (
-        <div className="navbar bg-base-100 font-poppins font-bold flex items-center justify-between z-10">
+        <div className="navbar bg-base-100 font-poppins font-bold flex items-center justify-between z-10 fixed top-0 left-0 w-full">
             <div>
                 <div className="dropdown">
                     <div tabIndex={0} role="button" className="btn btn-ghost lg:hidden">
