@@ -28,7 +28,7 @@ export default function Profile() {
             <div className="flex items-center flex-col lg:flex-row ">
                 <div className="p-5 lg:w-1/2">
                     <img src={user.photoURL || defaultUser} className="block m-auto w-28 h-28 rounded-full" alt="" />
-                    <h1 className="text-2xl text-white">Hi, {user?.displayName || 'Abroad'}</h1>
+                    <h1 className="text-2xl">Hi, {user?.displayName || 'Abroad'}</h1>
                     <p>Your Email: {user?.email || "Not found"}</p>
                     {
                         user && <Link to="/update-profile" className="btn my-7">Update Profile</Link>

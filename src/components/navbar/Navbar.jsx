@@ -5,6 +5,7 @@ import defaultUser from "../../assets/user.png";
 
 export default function Navbar() {
     const [profile, setProfile] = useState(false);
+    const [btn, setBtn] = useState(false);
     const { user, userLogout, toast } = useContext(AuthContext);
     const handleLogout = () => {
         userLogout()
@@ -63,14 +64,14 @@ export default function Navbar() {
                     user ? <button className="btn btn-outline" onClick={handleLogout}>Log out</button> : <Link to="/user/login" className="btn font-semibold rounded-none border-none bg-[#403F3F] text-white">Login</Link>
                 }
             </div>
-            <div className={`absolute flex items-center gap-4 justify-start flex-col right-0 top-16 rounded-2xl h-96 w-80 border z-10 bg-slate-100 ${profile && user !== null ? "" : "hidden"} bg-[url("/bg.svg")] bg-no-repeat bg-center bg-cover py-10`}>
+            <div className={`absolute flex items-center gap-4 justify-start flex-col right-0 top-16 rounded-2xl h-96 w-80 border z-10 bg-slate-100 ${profile && user !== null ? "" : "hidden"} ${btn ? "hidden" : ""} bg-[url("/bg.svg")] bg-no-repeat bg-center bg-cover py-10`}>
                 <div className={`w-10 rounded-full`}>
                     {
                         user?.photoURL ? <img src={user.photoURL} /> : <img src={defaultUser} className="rounded-full" />
                     }
                 </div>
                 <h1 className="text-white text-xl">{user?.displayName}</h1>
-                <Link to="/user-profile" className="btn">View Profile</Link>
+                <Link to="/user-profile" className="btn" onClick={() => setBtn(true)}>View Profile</Link>
 
             </div>
 
