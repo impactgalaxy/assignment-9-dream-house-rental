@@ -61,7 +61,6 @@ export default function ContextProvider({ children }) {
             userCondition();
         }
     }, []);
-    console.log(user);
 
     return (
         <AuthContext.Provider value={information}>

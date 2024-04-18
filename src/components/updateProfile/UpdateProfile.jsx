@@ -4,18 +4,22 @@ import { useNavigate } from "react-router-dom";
 import { Helmet } from "react-helmet";
 
 export default function UpdateProfile() {
-    const { userProfileUpdate, toast } = useContext(AuthContext);
+    const { userProfileUpdate, toast, user } = useContext(AuthContext);
     const navigate = useNavigate();
     const updateProfile = (e) => {
         e.preventDefault();
         const name = e.target.name.value;
-        const photoUrl = e.target.photoUrl.value;
-
-
+        let photoUrl = e.target.photoUrl.value;
+        if (photoUrl === "") {
+            photoUrl = user.photoURL
+        } else {
+            photoUrl = e.target.photoUrl.value;
+        }
         userProfileUpdate(name, photoUrl)
             .then(() => {
                 navigate("/user-profile");
                 toast.success("Profile Update successfully");
+                window.location.reload();
 
             })
             .catch(error => {

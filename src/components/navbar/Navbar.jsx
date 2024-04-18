@@ -2,6 +2,7 @@ import { useContext, useState } from "react"
 import { Link, NavLink } from "react-router-dom"
 import { AuthContext } from "../../contextProvider/ContextProvider";
 import defaultUser from "../../assets/user.png";
+import { CgLogOut } from "react-icons/cg";
 
 export default function Navbar() {
     const [profile, setProfile] = useState(false);
@@ -73,6 +74,14 @@ export default function Navbar() {
                 </div>
                 <h1 className="text-white text-xl">{user?.displayName}</h1>
                 <Link to="/user-profile" className="btn" onClick={() => setBtn(true)}>View Profile</Link>
+                <div className="w-full text-white px-2">
+                    <p className="font-bold text-lg border-b p-2">Contact</p>
+                    <p className="font-bold text-lg border-b p-2">About</p>
+                    <p className="font-bold text-lg border-b p-2">Help</p>
+                    <p className="font-bold text-lg p-2 flex items-center gap-2 text-warning cursor-pointer" onClick={handleLogout}>Logout <CgLogOut className="text-xl"></CgLogOut></p>
+
+
+                </div>
 
             </div>
 
