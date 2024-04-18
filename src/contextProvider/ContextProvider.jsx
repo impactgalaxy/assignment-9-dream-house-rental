@@ -4,6 +4,7 @@ import PropTypes from "prop-types";
 import auth from "../../firebase.init";
 import { ToastContainer, toast } from 'react-toastify';
 import 'react-toastify/dist/ReactToastify.css';
+import { Helmet } from "react-helmet";
 
 const googleProvider = new GoogleAuthProvider();
 const githubProvider = new GithubAuthProvider();
@@ -64,6 +65,9 @@ export default function ContextProvider({ children }) {
 
     return (
         <AuthContext.Provider value={information}>
+            <Helmet>
+                <title>Dream House Rental</title>
+            </Helmet>
             {children}
             <ToastContainer></ToastContainer>
         </AuthContext.Provider>
