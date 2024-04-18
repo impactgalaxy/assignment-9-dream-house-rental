@@ -4,11 +4,13 @@ import { useLoaderData, useParams } from "react-router-dom";
 import { CiLocationOn } from "react-icons/ci";
 import { BsCheck2Circle } from "react-icons/bs";
 import { Swiper, SwiperSlide } from 'swiper/react';
+import { FaPhone } from "react-icons/fa6";
+import { MdEmail } from "react-icons/md";
 import 'swiper/css';
 import 'swiper/css/effect-flip';
 import 'swiper/css/pagination';
 import 'swiper/css/navigation';
-import './style.css';
+// import './style.css';
 import { EffectFlip, Pagination, Navigation } from 'swiper/modules';
 // animate css
 import 'animate.css';
@@ -27,8 +29,6 @@ export default function HomeDetails() {
         const d = data.filter(matchItem => matchItem.id === parseInt(id))
         setFilterData(d);
     }, [data, id]);
-    console.log(filterData);
-
     return (
         <div>
             <Helmet>
@@ -39,12 +39,17 @@ export default function HomeDetails() {
                 filterData.map(item => {
                     return (
                         <div key={item.id}>
-                            <div className="bg-blue-600 text-white p-4 flex justify-between">
-                                <p className="flex items-center gap-2"><CiLocationOn></CiLocationOn> {item.location}</p>
+                            <div className="bg-blue-600 text-white p-4 flex items-center justify-between">
+                                <div>
+                                    <p className="flex items-center gap-2"><CiLocationOn></CiLocationOn> {item.location}</p>
+                                    <p className="flex items-center gap-2"><FaPhone></FaPhone> +812544444411</p>
+                                    <p className="flex items-center gap-2"><MdEmail></MdEmail> admin@info.com</p>
+
+                                </div>
                                 <p className="font-bold">Only for {item.status}</p>
                             </div>
                             <div className="h-60 flex items-center justify-center bg-segmentBg bg-center bg-no-repeat bg-cover my-10">
-                                <h1 className="text-4xl font-bold text-white">{item.segment_name}/<span className="text-purple-500">{item.estate_title}</span></h1>
+                                <h1 className="text-2xl lg:text-4xl font-bold text-white">{item.segment_name}/<span className="text-purple-500">{item.estate_title}</span></h1>
                             </div>
                             <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 justify-items-center gap-3">
                                 <div className="md:col-span-2 lg:col-span-3">
@@ -73,7 +78,9 @@ export default function HomeDetails() {
                                             <Swiper
                                                 effect={'flip'}
                                                 grabCursor={true}
-                                                pagination={true}
+                                                pagination={{
+                                                    clickable: true
+                                                }}
                                                 navigation={true}
                                                 modules={[EffectFlip, Pagination, Navigation]}
                                                 className="mySwiper"
@@ -118,14 +125,14 @@ export default function HomeDetails() {
                                     </div>
                                 </div>
                                 <div>
-                                    <div className="border-t-2 rounded-lg bg-blue-600 text-center text-2xl p-3">
+                                    <div className="border-t-2 rounded-t-lg bg-blue-600 text-center text-2xl p-3">
                                         {item.status === "sale" ? <p>Only <span className="text-3xl">${item.price}</span></p> :
                                             <>
                                                 <p className="border-b"><span className="text-3xl">${item.price}</span> per day</p>
                                                 <p><span className="text-3xl">${item.price * 3}</span> per month</p>
                                             </>}
                                     </div>
-                                    <div className="space-y-5 bg-banner bg-cover bg-no-repeat py-5">
+                                    <div className="space-y-5 bg-banner rounded-b-lg bg-cover bg-no-repeat py-5">
                                         <label htmlFor="name" className="block p-2">
                                             <input type="text" name="" id="" className="input w-full" placeholder="Enter your name" />
                                         </label>

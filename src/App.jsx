@@ -4,7 +4,7 @@ import 'swiper/css';
 import 'swiper/css/grid';
 import 'swiper/css/pagination';
 
-import './App.css';
+// import './App.css';
 
 // import required modules
 import { Pagination, Autoplay } from 'swiper/modules';
@@ -21,7 +21,7 @@ export default function App() {
         }}
         autoplay={true}
         modules={[Pagination, Autoplay]}
-        className="mySwiper border-blue-800 w-full"
+        className="mySwiper"
       >
         <SwiperSlide>
           <div >

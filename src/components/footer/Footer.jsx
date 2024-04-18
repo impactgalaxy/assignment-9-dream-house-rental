@@ -28,9 +28,9 @@ export default function Footer() {
                     <label className="label">
                         <span className="label-text">Enter your email address</span>
                     </label>
-                    <div className="join">
-                        <input type="text" placeholder="username@site.com" className="input input-bordered join-item" />
-                        <button className="btn btn-primary join-item">Subscribe</button>
+                    <div className="join flex flex-col gap-3 lg:gap-0 lg:flex-row items-center justify-center ">
+                        <input type="text" placeholder="username@site.com" className="input input-bordered lg:join-item w-full" />
+                        <button className="btn btn-primary lg:join-item">Subscribe</button>
                     </div>
                 </fieldset>
             </form>
