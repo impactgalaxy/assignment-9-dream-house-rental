@@ -3,6 +3,9 @@ import { Link, useNavigate } from "react-router-dom";
 import { IoMdEyeOff, IoMdEye } from "react-icons/io";
 import { useContext, useState } from "react";
 import { AuthContext } from "../../contextProvider/ContextProvider";
+import { ImCross } from "react-icons/im";
+
+
 export default function SignUp() {
     const [showPassword, setPassword] = useState(false);
     const [warning, setWarning] = useState("");
@@ -35,10 +38,14 @@ export default function SignUp() {
             </Helmet>
             <div className="flex items-center justify-center gap-4">
                 <h1 className="text-2xl md:text-4xl">You are most Welcome </h1>
-                <p></p>
+
 
             </div>
-            <div className="flex flex-col w-full border-opacity-50 p-4 lg:p-8 bg-white">
+            <div className="relative p-4 lg:p-8">
+                <Link to="/" title="Cancel" className="absolute top-0 right-3 hover:bg-slate-400 p-4 rounded-full">
+                    <ImCross></ImCross>
+                </Link>
+
                 <div>
                     <h1 className="text-3xl font-semibold">Sign Up</h1>
                     <p className="font-bold text-right my-3">Already have an account? <Link className="text-green-800" to="/user/login">Sign in</Link></p>

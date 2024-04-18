@@ -1,7 +1,6 @@
 import { useContext } from "react";
 import 'swiper/css/pagination';
 import 'swiper/css/navigation';
-import "../../styles.css";
 import defaultUser from "../../assets/user.png"
 import { AuthContext } from "../../contextProvider/ContextProvider";
 // Import Swiper React components
@@ -28,9 +27,7 @@ export default function Profile() {
                     <img src={user.photoURL || defaultUser} className="block m-auto w-28 h-28 rounded-full" alt="" />
                     <h1 className="text-2xl">Hi, {user?.displayName || 'Abroad'}</h1>
                     <p>Your Email: {user?.email || "Not found"}</p>
-                    {
-                        user && <Link to="/update-profile" className="btn my-7">Update Profile</Link>
-                    }
+                    <Link to="/update-profile" className="btn my-7">Update Profile</Link>
                 </div>
                 <div className="p-5 lg:w-1/2">
                     <Swiper

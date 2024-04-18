@@ -6,6 +6,7 @@ import { IoMdEyeOff, IoMdEye } from "react-icons/io";
 import { Helmet } from "react-helmet";
 import { useContext, useState } from "react";
 import { AuthContext } from "../../contextProvider/ContextProvider";
+import { ImCross } from "react-icons/im";
 
 export default function Login() {
     const [showPassword, setPassword] = useState(false);
@@ -80,7 +81,10 @@ export default function Login() {
 
             </div>
 
-            <div className="flex flex-col w-full border-opacity-50 p-4 lg:p-8">
+            <div className="p-4 lg:p-8 relative">
+                <Link to="/" title="Cancel" className="absolute top-0 right-3 hover:bg-slate-400 p-4 rounded-full">
+                    <ImCross></ImCross>
+                </Link>
                 <div>
                     <h1 className="text-3xl font-semibold">Log In</h1>
                     <p className="font-bold text-right my-3">Don&apos;t have an account? <Link className="text-green-800" to="/user/signUp">Sign Up</Link></p>
