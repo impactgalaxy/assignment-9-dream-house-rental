@@ -10,7 +10,6 @@ import 'swiper/css';
 import 'swiper/css/effect-flip';
 import 'swiper/css/pagination';
 import 'swiper/css/navigation';
-// import './style.css';
 import { EffectFlip, Pagination, Navigation } from 'swiper/modules';
 // animate css
 import 'animate.css';

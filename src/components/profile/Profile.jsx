@@ -1,5 +1,4 @@
 import { useContext } from "react";
-import Navbar from "../navbar/Navbar";
 import 'swiper/css/pagination';
 import 'swiper/css/navigation';
 import "../../styles.css";
@@ -24,7 +23,6 @@ export default function Profile() {
             <Helmet>
                 <title>Profile</title>
             </Helmet>
-            <Navbar></Navbar>
             <div className="flex items-center flex-col lg:flex-row ">
                 <div className="p-5 lg:w-1/2">
                     <img src={user.photoURL || defaultUser} className="block m-auto w-28 h-28 rounded-full" alt="" />

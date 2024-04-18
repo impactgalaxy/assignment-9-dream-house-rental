@@ -23,14 +23,15 @@ export default function Navbar() {
             <li><NavLink to="/house-for-rent" className={({ isActive }) => isActive ? "text-green-700 border-b" : ""}>House for Rent</NavLink></li>
             <li><NavLink to="/house-for-sale" className={({ isActive }) => isActive ? "text-green-700 border-b" : ""}>House for Sale</NavLink></li>
             <li><NavLink to="/update-profile" className={({ isActive }) => isActive ? "text-green-700 border-b" : ""}>Update Profile</NavLink></li>
-
             {
-                user && <li><NavLink to="/user-profile" className={({ isActive }) => isActive ? "text-green-700 border-b" : ""}>User Profile</NavLink></li>
+                user && (
+                    <li><NavLink to="/user-profile" className={({ isActive }) => isActive ? "text-green-700 border-b" : ""}>User Profile</NavLink></li>
+                )
             }
         </>
     )
     return (
-        <div className="navbar bg-base-100 font-poppins font-bold flex items-center justify-between z-10 fixed top-0 left-0 w-full">
+        <div className="navbar bg-base-100 font-poppins font-bold flex items-center justify-between z-10 w-full">
             <div>
                 <div className="dropdown">
                     <div tabIndex={0} role="button" className="btn btn-ghost lg:hidden">
